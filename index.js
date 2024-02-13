@@ -16,6 +16,15 @@ function CalculateRectangleArea() {
     showResult('Rectangle', area);
 }
 
+function CalculateParallelogramArea() {
+    const base = parseFloat(document.getElementById('parallelogram-base').value);
+    const height = parseFloat(document.getElementById('parallelogram-height').value);
+    let area = base * height;
+    if (!Number.isInteger(area))
+        area = area.toFixed(2);
+    showResult('Parallelogram', area);
+}
+
 function showResult(name, result) {
     const table = document.getElementById('calculation-history');
     const sl = document.getElementsByClassName('result-items').length + 1;

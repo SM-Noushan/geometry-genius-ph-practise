@@ -83,17 +83,26 @@
                     </div>
                 </div>
                 <!-- shape parallelogram -->
-                <div class="card w-96 bg-base-100 shadow-xl">
-                    <figure class="px-10 pt-10">
-                        <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes"
+                <div class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10">
+                    <figure class="px-5">
+                        <img src="geometry-genius-resources/images/parallelogram.png" alt="parallelogram"
                             class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center">
-                        <h2 class="card-title">Shoes!</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
-                        <div class="card-actions">
-                            <button class="btn btn-primary">Buy Now</button>
+                        <h2 class="card-title">Parallelogram</h2>
+                        <p>Area (A) = 0.5 x b x h</p>
+                        <div class="flex items-center gap-2">
+                            <input class="rounded w-20 bg-[#F1F1F1] px-3 py-1" type="number" name="parallelogram-base"
+                                id="parallelogram-base" placeholder="b">
+                            <span>cm</span>
+                            <input class="rounded w-20 bg-[#F1F1F1] px-3 py-1" type="number" name="parallelogram-height"
+                                id="parallelogram-height" placeholder="h">
+                            <span>cm</span>
                         </div>
+                    </div>
+                    <div class="card-actions">
+                        <button onclick="CalculateParallelogramArea()"
+                            class="btn rounded-lg bg-blue-500 hover:bg-blue-700 text-white text-xl leading-normal font-bold w-full">Calculate</button>
                     </div>
                 </div>
                 <!-- shape rhombus -->
