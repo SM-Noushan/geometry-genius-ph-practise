@@ -1,10 +1,21 @@
 function CalculateTriangleArea() {
     const base = parseFloat(document.getElementById('triangle-base').value);
     const height = parseFloat(document.getElementById('triangle-height').value);
-    const area = 0.5 * base * height;
-    showResult('Triangle', area)
-    // console.log(area, typeof area)
+    let area = 0.5 * base * height;
+    if (!Number.isInteger(area))
+        area = area.toFixed(2);
+    showResult('Triangle', area);
 }
+
+function CalculateRectangleArea() {
+    const width = parseFloat(document.getElementById('rectangle-width').value);
+    const length = parseFloat(document.getElementById('rectangle-length').value);
+    let area = width * length;
+    if (!Number.isInteger(area))
+        area = area.toFixed(2);
+    showResult('Rectangle', area);
+}
+
 function showResult(name, result) {
     const table = document.getElementById('calculation-history');
     const sl = document.getElementsByClassName('result-items').length + 1;
