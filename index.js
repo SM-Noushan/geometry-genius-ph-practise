@@ -25,6 +25,15 @@ function CalculateParallelogramArea() {
     showResult('Parallelogram', area);
 }
 
+function CalculateRhombusArea() {
+    const diameter1 = parseFloat(document.getElementById('rhombus-diameter-1').value);
+    const diameter2 = parseFloat(document.getElementById('rhombus-diameter-2').value);
+    let area = 0.5 * diameter1 * diameter2;
+    if (!Number.isInteger(area))
+        area = area.toFixed(2);
+    showResult('Rhombus', area);
+}
+
 function showResult(name, result) {
     const table = document.getElementById('calculation-history');
     const sl = document.getElementsByClassName('result-items').length + 1;
