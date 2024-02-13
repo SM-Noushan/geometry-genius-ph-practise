@@ -34,6 +34,24 @@ function CalculateRhombusArea() {
     showResult('Rhombus', area);
 }
 
+function CalculatePentagonArea() {
+    const perimeter = parseFloat(document.getElementById('pentagon-perimeter').value);
+    const apothem = parseFloat(document.getElementById('pentagon-apothem').value);
+    let area = 0.5 * perimeter * apothem;
+    if (!Number.isInteger(area))
+        area = area.toFixed(2);
+    showResult('Pentagon', area);
+}
+
+function CalculateEllipseArea() {
+    const radius1 = parseFloat(document.getElementById('ellipse-radius-1').value);
+    const radius2 = parseFloat(document.getElementById('ellipse-radius-2').value);
+    let area = Math.PI * radius1 * radius2;
+    if (!Number.isInteger(area))
+        area = area.toFixed(2);
+    showResult('Ellipse', area);
+}
+
 function showResult(name, result) {
     const table = document.getElementById('calculation-history');
     const sl = document.getElementsByClassName('result-items').length + 1;

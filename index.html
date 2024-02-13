@@ -40,7 +40,7 @@
             <div class=" grid grid-cols-3 gap-6">
                 <!-- shape triangle -->
                 <div class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10">
-                    <figure class="px-5 min-h-40">
+                    <figure class="px-5 min-h-48">
                         <img src="geometry-genius-resources/images/triangle.png" alt="triangle" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center">
@@ -62,12 +62,12 @@
                 </div>
                 <!-- shape rectangle -->
                 <div class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10">
-                    <figure class="px-5 min-h-40">
+                    <figure class="px-5 min-h-48">
                         <img src="geometry-genius-resources/images/rectangle.png" alt="rectangle" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center">
                         <h2 class="card-title">Rectangle</h2>
-                        <p>Area (A) = 0.5 × w × l</p>
+                        <p>Area (A) = w × l</p>
                         <div class="flex items-center gap-2">
                             <input class="rounded w-20 bg-[#F1F1F1] px-3 py-1" type="number" name="rectangle-width"
                                 id="rectangle-width" placeholder="w">
@@ -84,13 +84,13 @@
                 </div>
                 <!-- shape parallelogram -->
                 <div class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10">
-                    <figure class="px-5 min-h-40">
+                    <figure class="px-5 min-h-48">
                         <img src="geometry-genius-resources/images/parallelogram.png" alt="parallelogram"
                             class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center">
                         <h2 class="card-title">Parallelogram</h2>
-                        <p>Area (A) = 0.5 × b × h</p>
+                        <p>Area (A) = b × h</p>
                         <div class="flex items-center gap-2">
                             <input class="rounded w-20 bg-[#F1F1F1] px-3 py-1" type="number" name="parallelogram-base"
                                 id="parallelogram-base" placeholder="b">
@@ -107,7 +107,7 @@
                 </div>
                 <!-- shape rhombus -->
                 <div class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10">
-                    <figure class="px-5 min-h-40">
+                    <figure class="px-5 min-h-48">
                         <img src="geometry-genius-resources/images/rhombus.png" alt="rhombus" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center">
@@ -128,31 +128,47 @@
                     </div>
                 </div>
                 <!-- shape pentagon -->
-                <div class="card w-96 bg-base-100 shadow-xl">
-                    <figure class="px-10 pt-10">
-                        <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes"
-                            class="rounded-xl" />
+                <div class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10">
+                    <figure class="px-5 min-h-48">
+                        <img src="geometry-genius-resources/images/pentagon.png" alt="pentagon" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center">
-                        <h2 class="card-title">Shoes!</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
-                        <div class="card-actions">
-                            <button class="btn btn-primary">Buy Now</button>
+                        <h2 class="card-title">Pentagon</h2>
+                        <p>Area (A) = 0.5 × b × a</p>
+                        <div class="flex items-center gap-2">
+                            <input class="rounded w-20 bg-[#F1F1F1] px-3 py-1" type="number" name="pentagon-perimeter"
+                                id="pentagon-perimeter" placeholder="p">
+                            <span>cm</span>
+                            <input class="rounded w-20 bg-[#F1F1F1] px-3 py-1" type="number" name="pentagon-apothem"
+                                id="pentagon-apothem" placeholder="a">
+                            <span>cm</span>
                         </div>
+                    </div>
+                    <div class="card-actions">
+                        <button onclick="CalculatePentagonArea()"
+                            class="btn rounded-lg bg-blue-500 hover:bg-blue-700 text-white text-xl leading-normal font-bold w-full">Calculate</button>
                     </div>
                 </div>
                 <!-- shape ellipse -->
-                <div class="card w-96 bg-base-100 shadow-xl">
-                    <figure class="px-10 pt-10">
-                        <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes"
-                            class="rounded-xl" />
+                <div class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10">
+                    <figure class="px-5 min-h-48">
+                        <img src="geometry-genius-resources/images/ellipse.png" alt="ellipse" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center">
-                        <h2 class="card-title">Shoes!</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
-                        <div class="card-actions">
-                            <button class="btn btn-primary">Buy Now</button>
+                        <h2 class="card-title">Ellipse</h2>
+                        <p>Area (A) = πab</p>
+                        <div class="flex items-center gap-2">
+                            <input class="rounded w-20 bg-[#F1F1F1] px-3 py-1" type="number" name="ellipse-radius-1"
+                                id="ellipse-radius-1" placeholder="a">
+                            <span>cm</span>
+                            <input class="rounded w-20 bg-[#F1F1F1] px-3 py-1" type="number" name="ellipse-radius-2"
+                                id="ellipse-radius-2" placeholder="b">
+                            <span>cm</span>
                         </div>
+                    </div>
+                    <div class="card-actions">
+                        <button onclick="CalculateEllipseArea()"
+                            class="btn rounded-lg bg-blue-500 hover:bg-blue-700 text-white text-xl leading-normal font-bold w-full">Calculate</button>
                     </div>
                 </div>
             </div>
