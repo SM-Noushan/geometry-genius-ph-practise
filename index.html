@@ -17,6 +17,9 @@
         tailwind.config = {
             theme: {
                 extend: {
+                    colors: {
+                        'color1': '#414141',
+                    },
                     fontFamily: {
                         'inter': ['Inter', 'sans-serif'],
                     }
@@ -26,12 +29,116 @@
     </script>
 </head>
 
-<body>
+<body class="m-4">
     <header>
 
     </header>
-    <main>
+    <main class="font-inter">
+        <!-- main content container -->
+        <section class="flex mt-12 mb-28 text-color1">
+            <!-- shape card container -->
+            <div class="flex-1 grid grid-cols-3 gap-6">
+                <!-- shape triangle -->
+                <div class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10">
+                    <figure class="px-5">
+                        <img src="geometry-genius-resources/images/triangle.png" alt="triangle" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title">Triangle</h2>
+                        <p>Area (A) = 0.5 x b x h</p>
+                        <div class="flex items-center gap-2">
+                            <input class="rounded w-20 bg-[#F1F1F1] px-3 py-1" type="number" name="triangle-base"
+                                id="triangle-base" placeholder="b">
+                            <span>cm</span>
+                            <input class="rounded w-20 bg-[#F1F1F1] px-3 py-1" type="number" name="triangle-height"
+                                id="triangle-height" placeholder="h">
+                            <span>cm</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <button onclick="CalculateTriangleArea()"
+                            class="btn rounded-lg bg-blue-500 hover:bg-blue-700 text-white text-xl leading-normal font-bold w-full">Calculate</button>
+                    </div>
+                </div>
+                <!-- shape rectangle -->
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                        <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes"
+                            class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title">Shoes!</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div class="">
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- shape parallelogram -->
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                        <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes"
+                            class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title">Shoes!</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div class="card-actions">
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- shape rhombus -->
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                        <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes"
+                            class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title">Shoes!</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div class="card-actions">
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- shape pentagon -->
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                        <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes"
+                            class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title">Shoes!</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div class="card-actions">
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- shape ellipse -->
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                        <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes"
+                            class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title">Shoes!</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div class="card-actions">
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- area calculation container -->
+            <div class="w-96 text-center py-7 border rounded-lg border-solid border-[#11111100]/10">
+                <h3 class="text-xl font-bold underline mb-8">Area Calculation</h3>
+                <div id="calculation-history" class="px-2 space-y-3">
 
+                </div>
+            </div>
+        </section>
     </main>
 
     <script src="index.js"></script>
