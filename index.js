@@ -1,15 +1,15 @@
 function showResult(name, result) {
     const table = document.getElementById('calculation-history');
     const sl = document.getElementsByClassName('result-items').length + 1;
-    table.innerHTML += `<div        class="result-items grid grid-cols-3">
+    table.innerHTML += `<div        class="result-items grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-2 2xl:grid-cols-3">
         <p class="text-left">${sl}. ${name}</p>
         <p id="${sl}">${result}cm<sup>2</sup> </p>
         <button
-        onclick="convertToMeter(${sl})" class="btn-sm rounded bg-blue-500 hover:bg-blue-700 text-white text-sm leading-normal font-medium">Convert
+        onclick="convertToMeter(${sl})" class="col-span-2 sm:col-span-1 xl:col-span-2 2xl:col-span-1 btn-sm rounded bg-blue-500 hover:bg-blue-700 text-white text-sm leading-normal font-medium">Convert
             to m<sup>2</sup>
         </button>
         <button
-        onclick="convertToCM(${sl})" class="btn-sm rounded bg-blue-500 hover:bg-blue-700 text-white text-sm leading-normal font-medium hidden">Convert
+        onclick="convertToCM(${sl})" class="col-span-2 sm:col-span-1 xl:col-span-2 2xl:col-span-1 btn-sm rounded bg-blue-500 hover:bg-blue-700 text-white text-sm leading-normal font-medium hidden">Convert
             to cm<sup>2</sup>
         </button>
     </div>`;
@@ -26,12 +26,16 @@ function convertValue(type, id) {
     let value = parseFloat(data.innerText);
     if (type === 'm') {
         value = value / 10000;
+        if (!Number.isInteger(value))
+            value = value.toFixed(4);
         data.innerHTML = `${value}m<sup>2</sup>`;
         btnConvertMeter.classList.add('hidden');
         btnConvertCM.classList.remove('hidden');
     }
     else {
         value = value * 10000;
+        if (!Number.isInteger(value))
+            value = value.toFixed(2);
         data.innerHTML = `${value}cm<sup>2</sup>`;
         btnConvertMeter.classList.remove('hidden');
         btnConvertCM.classList.add('hidden');
