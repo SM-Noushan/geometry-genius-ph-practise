@@ -29,17 +29,31 @@
     </script>
 </head>
 
-<body class="m-4">
+<body class="font-inter">
     <header>
-
+        <!-- navbar -->
+        <nav class="mx-12 my-12">
+            <div class="bg-blue-100 text-color1 px-10 py-10 rounded-lg flex items-center">
+                <div class="flex-1">
+                    <a class="rounded-lg text-5xl font-bold hover:cursor-pointer">Interactive
+                        <br> <span class="font-medium text-3xl leading-10 tracking-[1.5px]">Geometry
+                            Genius</span></a>
+                </div>
+                <div class="">
+                    <a
+                        class="btn btn-lg px-10 rounded-lg bg-blue-500 hover:bg-blue-700 text-white text-xl leading-normal font-bold">Blog</a>
+                </div>
+            </div>
+        </nav>
     </header>
-    <main class="font-inter">
+    <main>
         <!-- main content container -->
-        <section class="flex justify-center mt-12 mb-28 text-color1">
+        <section class="mx-12 flex gap-6 mb-28 text-color1">
             <!-- shape card container -->
-            <div class=" grid grid-cols-3 gap-6">
+            <div class="grid grid-cols-3 gap-6">
                 <!-- shape triangle -->
-                <div class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10">
+                <div
+                    class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10 hover:bg-yellow-100">
                     <figure class="px-5 min-h-48">
                         <img src="geometry-genius-resources/images/triangle.png" alt="triangle" class="rounded-xl" />
                     </figure>
@@ -61,7 +75,8 @@
                     </div>
                 </div>
                 <!-- shape rectangle -->
-                <div class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10">
+                <div
+                    class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10 hover:bg-purple-100">
                     <figure class="px-5 min-h-48">
                         <img src="geometry-genius-resources/images/rectangle.png" alt="rectangle" class="rounded-xl" />
                     </figure>
@@ -83,7 +98,8 @@
                     </div>
                 </div>
                 <!-- shape parallelogram -->
-                <div class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10">
+                <div
+                    class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10 hover:bg-green-100">
                     <figure class="px-5 min-h-48">
                         <img src="geometry-genius-resources/images/parallelogram.png" alt="parallelogram"
                             class="rounded-xl" />
@@ -106,7 +122,8 @@
                     </div>
                 </div>
                 <!-- shape rhombus -->
-                <div class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10">
+                <div
+                    class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10 hover:bg-amber-100">
                     <figure class="px-5 min-h-48">
                         <img src="geometry-genius-resources/images/rhombus.png" alt="rhombus" class="rounded-xl" />
                     </figure>
@@ -114,11 +131,11 @@
                         <h2 class="card-title">Rhombus</h2>
                         <p>Area (A) = 0.5 × d<sub>1</sub> × d<sub>2</sub></p>
                         <div class="flex items-center gap-2">
-                            <input class="rounded w-20 bg-[#F1F1F1] px-3 py-1" type="number" name="rhombus-diameter-1"
-                                id="rhombus-diameter-1" placeholder="d&#x2081;">
+                            <input class="rounded w-20 bg-[#F1F1F1] px-3 py-1" type="number" name="rhombus-diagonal-1"
+                                id="rhombus-diagonal-1" placeholder="d&#x2081;">
                             <span>cm</span>
-                            <input class="rounded w-20 bg-[#F1F1F1] px-3 py-1" type="number" name="rhombus-diameter-2"
-                                id="rhombus-diameter-2" placeholder="d&#x2082;">
+                            <input class="rounded w-20 bg-[#F1F1F1] px-3 py-1" type="number" name="rhombus-diagonal-2"
+                                id="rhombus-diagonal-2" placeholder="d&#x2082;">
                             <span>cm</span>
                         </div>
                     </div>
@@ -128,7 +145,8 @@
                     </div>
                 </div>
                 <!-- shape pentagon -->
-                <div class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10">
+                <div
+                    class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10 hover:bg-orange-100">
                     <figure class="px-5 min-h-48">
                         <img src="geometry-genius-resources/images/pentagon.png" alt="pentagon" class="rounded-xl" />
                     </figure>
@@ -150,7 +168,8 @@
                     </div>
                 </div>
                 <!-- shape ellipse -->
-                <div class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10">
+                <div
+                    class="card max-w-[350px] px-10 py-12 border rounded-lg border-solid border-[#11111100]/10 hover:bg-gray-100">
                     <figure class="px-5 min-h-48">
                         <img src="geometry-genius-resources/images/ellipse.png" alt="ellipse" class="rounded-xl" />
                     </figure>
@@ -173,17 +192,16 @@
                 </div>
             </div>
             <!-- area calculation container -->
-            <div class="w-[25%]">
-                <div class=" text-center py-7 border rounded-lg border-solid border-[#11111100]/10">
+            <div class="flex-1 w-[25%]">
+                <div class="min-h-[40dvh] text-center py-7 border rounded-lg border-solid border-[#11111100]/10">
                     <h3 class="text-xl font-bold underline mb-8">Area Calculation</h3>
-                    <div id="calculation-history" class="px-12 space-y-3">
+                    <div id="calculation-history" class="px-8 space-y-3">
 
                     </div>
                 </div>
             </div>
         </section>
     </main>
-
     <script src="index.js"></script>
 </body>
 

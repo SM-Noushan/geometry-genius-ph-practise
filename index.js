@@ -1,6 +1,54 @@
+function showResult(name, result) {
+    const table = document.getElementById('calculation-history');
+    const sl = document.getElementsByClassName('result-items').length + 1;
+    table.innerHTML += `<div        class="result-items grid grid-cols-3">
+        <p class="text-left">${sl}. ${name}</p>
+        <p id="${sl}">${result}cm<sup>2</sup> </p>
+        <button
+        onclick="convertToMeter(${sl})" class="btn-sm rounded bg-blue-500 hover:bg-blue-700 text-white text-sm leading-normal font-medium">Convert
+            to m<sup>2</sup>
+        </button>
+        <button
+        onclick="convertToCM(${sl})" class="btn-sm rounded bg-blue-500 hover:bg-blue-700 text-white text-sm leading-normal font-medium hidden">Convert
+            to cm<sup>2</sup>
+        </button>
+    </div>`;
+}
+
+function getValue(targetName) {
+    return document.getElementById(targetName).value;
+}
+
+function convertValue(type, id) {
+    const data = document.getElementById(id);
+    const btnConvertMeter = data.nextElementSibling;
+    const btnConvertCM = btnConvertMeter.nextElementSibling;
+    let value = parseFloat(data.innerText);
+    if (type === 'm') {
+        value = value / 10000;
+        data.innerHTML = `${value}m<sup>2</sup>`;
+        btnConvertMeter.classList.add('hidden');
+        btnConvertCM.classList.remove('hidden');
+    }
+    else {
+        value = value * 10000;
+        data.innerHTML = `${value}cm<sup>2</sup>`;
+        btnConvertMeter.classList.remove('hidden');
+        btnConvertCM.classList.add('hidden');
+    }
+}
+
+function convertToMeter(id) {
+    convertValue('m', id);
+}
+
+function convertToCM(id) {
+    convertValue('cm', id);
+}
+
 function CalculateTriangleArea() {
-    const base = parseFloat(document.getElementById('triangle-base').value);
-    const height = parseFloat(document.getElementById('triangle-height').value);
+    const base = parseFloat(getValue('triangle-base'));
+    const height = parseFloat(getValue('triangle-height'));
     let area = 0.5 * base * height;
     if (!Number.isInteger(area))
         area = area.toFixed(2);
@@ -8,8 +56,8 @@ function CalculateTriangleArea() {
 }
 
 function CalculateRectangleArea() {
-    const width = parseFloat(document.getElementById('rectangle-width').value);
-    const length = parseFloat(document.getElementById('rectangle-length').value);
+    const width = parseFloat(getValue('rectangle-width'));
+    const length = parseFloat(getValue('rectangle-length'));
     let area = width * length;
     if (!Number.isInteger(area))
         area = area.toFixed(2);
@@ -17,8 +65,8 @@ function CalculateRectangleArea() {
 }
 
 function CalculateParallelogramArea() {
-    const base = parseFloat(document.getElementById('parallelogram-base').value);
-    const height = parseFloat(document.getElementById('parallelogram-height').value);
+    const base = parseFloat(getValue('parallelogram-base'));
+    const height = parseFloat(getValue('parallelogram-height'));
     let area = base * height;
     if (!Number.isInteger(area))
         area = area.toFixed(2);
@@ -26,17 +74,17 @@ function CalculateParallelogramArea() {
 }
 
 function CalculateRhombusArea() {
-    const diameter1 = parseFloat(document.getElementById('rhombus-diameter-1').value);
-    const diameter2 = parseFloat(document.getElementById('rhombus-diameter-2').value);
-    let area = 0.5 * diameter1 * diameter2;
+    const diagonal1 = parseFloat(getValue('rhombus-diagonal-1'));
+    const diagonal2 = parseFloat(getValue('rhombus-diagonal-2'));
+    let area = 0.5 * diagonal1 * diagonal2;
     if (!Number.isInteger(area))
         area = area.toFixed(2);
     showResult('Rhombus', area);
 }
 
 function CalculatePentagonArea() {
-    const perimeter = parseFloat(document.getElementById('pentagon-perimeter').value);
-    const apothem = parseFloat(document.getElementById('pentagon-apothem').value);
+    const perimeter = parseFloat(getValue('pentagon-perimeter'));
+    const apothem = parseFloat(getValue('pentagon-apothem'));
     let area = 0.5 * perimeter * apothem;
     if (!Number.isInteger(area))
         area = area.toFixed(2);
@@ -44,23 +92,10 @@ function CalculatePentagonArea() {
 }
 
 function CalculateEllipseArea() {
-    const radius1 = parseFloat(document.getElementById('ellipse-radius-1').value);
-    const radius2 = parseFloat(document.getElementById('ellipse-radius-2').value);
+    const radius1 = parseFloat(getValue('ellipse-radius-1'));
+    const radius2 = parseFloat(getValue('ellipse-radius-2'));
     let area = Math.PI * radius1 * radius2;
     if (!Number.isInteger(area))
         area = area.toFixed(2);
     showResult('Ellipse', area);
-}
-
-function showResult(name, result) {
-    const table = document.getElementById('calculation-history');
-    const sl = document.getElementsByClassName('result-items').length + 1;
-    table.innerHTML += `<div        class="result-items grid grid-cols-3">
-        <p class="text-left">${sl}. ${name}</p>
-        <p>${result} cm <sup>2</sup> </p>
-        <button
-            class="btn-sm rounded bg-blue-500 hover:bg-blue-700 text-white text-sm leading-normal font-medium">Convert
-            to m<sup>2</sup>
-        </button>
-    </div>`;
 }
